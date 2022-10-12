@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+  <div class="col-lg-9" id="main-home">
+
+    <h3>Group details</h3>
+    <hr>
+
+    <div class="" id="group-box">
+
+      <h1>{{group.group_name}}</h1>
+      <hr>
+
+      <p>Group admin:  </p>
+
+      <p>Group members: {{group.group_members}}</p>
+
+      <ol>
+
+        {% for members in group.members %}
+
+          <li>{{members.user.username}}</li>
+
+        {% endfor %}
+
+      </ol>
+
+      <p>Membership limit: {{group.member_limit}}</p>
+
+      <p>member target: {{group.member_target}}</p>
+
+      <p> Group Target: {{group.group_target}} </p>
+
+      <p> current contribution: {{group.current_contribution}} </p>
+
+    </div>
+
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Period</th>
+            <th scope="col">Month</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td> <a href="{{url_for('view', group_id=group.id, period=1)}}">Jan</a></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td> <a href="{{url_for('view', group_id=group.id, period=2)}}">Feb</a></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td> <a href="{{url_for('view', group_id=group.id, period=3)}}">Mar</a></td>
+         
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+    
+    <div id="jnlv">
+
+        {% if current_user and not member %}
+
+        {{ wtf.quick_form(form) }}
+  
+      {% elif member %}
+        <button class="btn btn-warning  btn-lg " onclick="leaveGroup({{group.id}}, {{current_user.id}}, {{member.user_id}})">leave</button>
+      {% endif %}
+
+
+      <a href="{{ url_for('start_tenure' , id=group.id) }}">Start tenure</a> 
+
+
+    </div>
+
+    
+
+  </div>
+
+    </script>
+    
+
+{% endblock %}

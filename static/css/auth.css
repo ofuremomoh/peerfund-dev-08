@@ -1,0 +1,47 @@
+*{
+  font-family: 'Cabin', sans-serif;
+}
+
+@media screen and (max-width: 800px){
+
+  #sub-box-auth {
+    margin-top: 25% !important;
+  }
+}
+
+@media screen and (min-width: 900px){
+  
+  form legend,form div input, #box-input-btn, form fieldset div, #sign-btn, #login-btn{
+    margin-left: 0%;
+  }
+  
+  #sub-box-auth{
+    margin-top: 10%;
+  }
+  #sub-box-auth > div:last-child{
+    border: 3px solid darkcyan;
+    height: auto;
+  }
+  #sign-btn, #login-btn{
+    margin-bottom: 3%;
+  }
+}
+
+
+#box-input-btn button:hover , #login-btn:hover{
+  background-color: darkcyan;
+}
+
+#sign-btn :hover{
+  background-color: green;
+}
+
+#sign-btn, #login-btn{
+  background-color: whitesmoke;
+  border-radius: 7px;
+}
+
+#box-auth {
+  border: thin solid darkcyan;
+  background-color: darkcyan;
+}

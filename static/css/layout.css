@@ -1,0 +1,79 @@
+*{
+  font-family: 'Cabin', sans-serif;
+}
+.main-box{
+  /* background-color: whitesmoke; */
+}
+
+
+@media(min-width: 900px){
+
+  #nav {
+    font-size: 6.3mm;
+    font-weight: normal;
+    /* border: red thin solid; */
+    width: 2.6in;
+    position: fixed;
+    top: 0;
+
+
+  }
+
+  ul#admin-sub-nav{
+    display: none;
+  
+  }
+  
+  
+  
+  a#admin-nav:hover ul#admin-sub-nav{
+    display: block;
+    font-size: 4mm;
+  }
+
+  #admin-sub-nav li a{
+    margin-left: 10mm;
+  }
+
+  #mbl{
+    display: none !important;
+  }
+}
+
+@media (max-width: 850px){
+  #admin-sub-nav li a{
+    margin-left: 3mm;
+  }
+
+  #admin-sub-nav{
+    display: none;
+  
+  }
+  
+  #main-nav a#admin-nav:hover #admin-sub-nav{
+    display: block;
+    font-size: 4mm;
+  }
+
+}
+
+#nav > li > a{
+  color: black;
+}
+
+#adm-nv ul li a{
+  color: darkcyan;
+}
+
+#adm-nv ul li a:hover{
+  background-color: whitesmoke;
+}
+
+#main-nav a{
+  color: black;
+}
+
+#main-nav a:hover{
+  color: whitesmoke;
+  background: darkcyan;
+}

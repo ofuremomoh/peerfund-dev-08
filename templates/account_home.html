@@ -1,0 +1,70 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+  <div class="col-lg-9  col-sm-9 col-xs-12">
+
+    <h3>User account profile</h3>
+    <hr>
+
+    <div class="" id="profile-box">
+
+      <div class="" id="sub-prfl-box">
+
+        <div class="" id="prfl-pix">
+
+          <img src="">
+
+        </div>
+
+        <h1>{{current_user.username}}</h1>
+
+        <p>Group in: {{current_user.group_in}}</p>
+
+        <ol>
+
+          {% for member in current_user.member %}
+
+            <li> <a href="/group_details?group_id={{member.group.id}}"> <button type="button" name="button" class="btn btn-lg btn-xs btn-primary" >{{member.group.group_name}}</button> </a> </li><br>
+
+          {% endfor %}
+
+        </ol>
+
+
+        <div class="" id="updt-caller">
+
+          <button type="button" class="btn btn-lg btn-xs btn-default" name="button" onclick="pop('#upd-acct-dtls')" >Update account info</button>
+
+        </div><br>
+
+        <div class="" id="crt-grp">
+
+          <a href="signup"> <button type="button" class="btn btn-xs btn-lg btn-default" name="button">Create Group</button> </a>
+        </div>
+
+      </div>
+
+
+    </div><br>
+
+    <div class="" id="upd-acct-dtls">
+
+      <div class="" id="closepop">
+
+        <span><button class="btn btn-danger btn-xs btn-md pull-right" type="button" name="button" onclick="closepop('#upd-acct-dtls')">x</button></span>
+
+      </div>
+
+      <form class="" action="/upd_acct_info" method="post" enctype="multipart/form-data">
+
+        <div class="input-group col-lg-12  col-sm-12 col-xs-12">
+
+          
+
+          <div class="invalid-feedback" id="err">
+
+        
+
+
+{% endblock %}
